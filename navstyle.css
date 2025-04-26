@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Navigation Styles */
+.navbar-container {
+    width: 100%;
+    z-index: 100;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    height: 100px;
+    padding: 20px 70px 0 10px;
+}
+
+.logo-container img {
+    height: 100px;
+    width: 110px;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 80px;
+}
+
+.nav-links a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    transform: scale(1);
+    will-change: transform;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: gold;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Footer Styles */
+.footer-container {
+    background-color: black;
+    color: white;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: cyan;
+}
+
+.footer-bottom {
+    background-color: black;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+    color: grey;
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .nav-links ul {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        height: 80px;
+    }
+
+    .logo-container img {
+        height: 60px;
+        width: 70px;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        z-index: 1000;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-section {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .footer-section:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+    /* Base Styles */
+    .section {
+        display: flex;
+        flex-direction: column;
+        margin-top: -4px;
+        overflow: hidden;
+    }
+
+    .section-image, .section-content {
+        width: 100%;
+    }
+
+    .section-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .section-content {
+        padding: 40px 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        backdrop-filter: blur(5px);
+        margin-top: 4px;
+    }
+
+    .section-content div {
+        max-width: 800px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-content h1 {
+        margin-bottom: 20px;
+        font-size: 2.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-content p {
+        margin-bottom: 15px;
+        font-size: 1.15rem;
+        line-height: 1.7;
+        color: #f9f9f9;
+        text-align: justify;
+        text-justify: inter-word;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Specific Section Backgrounds */
+    #who_we_are .section-content {
+        background: linear-gradient(to right, #020d72, #061bc9);
+        color: white;
+    }
+
+    #What_We_Do .section-content {
+        background: linear-gradient(to right, #555, #888);
+        color: white;
+    }
+
+    #news .section-content {
+        background: linear-gradient(to right, #1e1eff, #0033cc);
+        color: white;
+    }
+
+    #career .section-content {
+        background: linear-gradient(to right, #008cdd, #005bb5);
+        color: white;
+    }
+
+    /* Carousel Styles */
+    .carousel-item img {
+        height: 100vh;
+        width: 100%;
+    }
+
+    .carousel-caption {
+        bottom: 10%;
+        transform: translateY(50%);
+    }
+
+    .carousel-caption h5 {
+        font-size: 2.5rem;
+        font-style: italic;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        color: #fff;
+    }
+
+    /* Responsive Styles */
+    @media (min-width: 768px) {
+        .section {
+            flex-direction: row;
+            height: 100vh;
+        }
+
+        .section-image {
+            width: 70%;
+            height: 100%;
+        }
+
+        .section-content {
+            width: 30%;
+            height: 100%;
+        }
+
+        #What_We_Do .section-image {
+            order: 2;
+        }
+
+        #What_We_Do .section-content {
+            order: 1;
+            width: 40%;
+        }
+
+        #What_We_Do .section-image {
+            width: 60%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .carousel-caption h5 {
+            font-size: 1.5rem;
+        }
+
+        .section-content h1 {
+            font-size: 2.2rem;
+        }
+
+        .section-content p {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .carousel-caption h5 {
+            font-size: 1.2rem;
+        }
+
+        .section-content {
+            padding: 30px 15px;
+        }
+
+        .section-content div {
+            padding: 20px;
+        }
+    }
